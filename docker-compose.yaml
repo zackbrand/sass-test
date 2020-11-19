@@ -1,7 +1,8 @@
 version: "3.8"
 services:
   sass:
-    image: "zackbrand/sass-test:latest"
+    build:
+      context: .
+      dockerfile: Dockerfile-sass
     volumes:
       - ./code:/usr/src/app/code
-    command: "npm start"
