@@ -2,14 +2,18 @@
   "name": "test",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node-sass -w code/src/master.scss code/public/min.css",
+    "start": "concurrently \"npm run sass\" \"npm run serve\"",
+    "serve": "node server.js",
+    "sass": "node-sass -w code/src/master.scss code/public/min.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "", 
+  "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^5.3.0",
+    "express": "^4.17.1",
     "node-sass": "^5.0.0"
   }
 }
